@@ -56,8 +56,8 @@ def test_code(test_case):
         def __init__(self,comb):
             self.poses = [comb]
 
-req = Pose(comb)
-start_time = time()
+    req = Pose(comb)
+    start_time = time()
 print('3')   
 ########################################################################################
 #Setup
