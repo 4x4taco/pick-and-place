@@ -30,6 +30,8 @@ The a paramaters of the DH table consist of 4 unique properties of the model tha
 
 
 
+
+
 ### Inverse Kinematics
 
 
