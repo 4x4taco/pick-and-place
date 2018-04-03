@@ -50,18 +50,21 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
 ### Transformation matrix frame 0 to 2
 
-![](DH_params_pickandplace.PNG)
+![](transformation_matrix_T0_2.PNG)
 
 
 ### Transformation matrix frame 2 to 4
 
-![](DH_params_pickandplace.PNG)
+![](transformation_matrix_T2_4.PNG)
 
 
 ### Transformation matrix frame 4 to 6
 
-![](DH_params_pickandplace.PNG)
+![](transformation_matrix_T4_6.PNG)
 ### Transformation matrix frame 0 to 2
+
+![](transformation_matrix_T0_EE.PNG)
+
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
