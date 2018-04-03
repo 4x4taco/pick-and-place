@@ -30,11 +30,6 @@ The a paramaters of the DH table consist of 4 unique properties of the model tha
 
 
 
-
-
-### Inverse Kinematics
-
-
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
 Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
@@ -65,6 +60,10 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
 ![](transformation_matrix_T0_EE.PNG)
 
+### Inverse Kinematics
+The approach used for finding the joing angles of the robotic arm as a function of the end effector postion consisted of breaking the robot into two seperate parts.  The wrist center comprised of 3 revolute joints and the first 3 joints of the robot leading up to the wrist center.  Although numerical methods exist to compute all 6 joint angles it can be difficult to arrive at the correct set of solutions.  There will be multiple answers for each joint angle but the joints themselves impose their own constraints depending on the joint type ie. (does the joint move in that direction or past a certain degree limit).  Because of these limitations and ease of calculation an analytical or cloed form solution was used.  Mapping the geometry of the first 3 joints or up to the wrist center one can find the joint angles with simple geometry once the first three joint angles have been found some matrix multiplication will yield the last 3 joint angles.
+
+Finding the exaxt postion of the wrtist center required additional rotations to the transformation matrices derrived from the DH parameter table.  This was due to an offset between the gripper frame and frame 6.  An additional roation of 180 degrees around the z axis and -90 degree rotation about the y axis aligned these two frames.  
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
