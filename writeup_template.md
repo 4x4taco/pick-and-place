@@ -1,13 +1,9 @@
 ## Project: Kinematics Pick & Place
 
-## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
-### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
-
 ### Writeup / README
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
-
 ## Kinematic Analysis
+
 ### Forward Kinematics
 Your writeup should contain a DH parameter table with proper notations and description about how you obtained the table. Make sure to use the modified DH parameters discussed in this lesson. Please add an annotated figure of the robot with proper link assignments and joint rotations (Example figure provided in the writeup template). It is strongly recommended that you use pen and paper to create this figure to get a better understanding of the robot kinematics.
 
