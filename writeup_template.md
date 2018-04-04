@@ -16,7 +16,7 @@ The purpose of the pick and place project was to have the student learn about se
 #### 1) label all joints from 0 to N
 #### 2) label all links from 0 to N
 #### 3) Draw lines through each joint defining the joint axes.
-#### 4) Assign the z axis of each frame to point alon gjoint axes.
+#### 4) Assign the z axis of each frame to point along gjoint axes.
 #### 5) Idenfigy the common normal between each frame z_i-1 to z_i
 #### 6) Th eendpoints of th intermeiate links are associated with thwo joint axes i and i_+1
 #### 7) For the base link, always choose frame 0 to be conicident with frame 1 when the first joint variable is = 0 thiw will sensure a_0 = alpha_0 and if joint 1 is a revolute d1 = 0, if joint 1 is prismatic, then theta_1 = 0
@@ -26,12 +26,12 @@ The a paramaters of the DH table consist of 4 unique properties of the model tha
 
 ### 6 dof schematic
 
-![](DH_params_pickandplace.PNG)
+![](./pics/DH_params_pickandplace.PNG)
 
 
 ### Generic DH transformation matrix
 
-![](gen_DH_matrix.PNG)
+![](./pics/gen_DH_matrix.PNG)
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
@@ -48,40 +48,40 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
 ### Transformation matrix frame 0 to 2
 
-![](transformation_matrix_T0_2.PNG)
+![](./pics/transformation_matrix_T0_2.PNG)
 
 
 ### Transformation matrix frame 2 to 4
 
-![](transformation_matrix_T2_4.PNG)
+![](./pics/transformation_matrix_T2_4.PNG)
 
 
 ### Transformation matrix frame 4 to 6
 
-![](transformation_matrix_T4_6.PNG)
+![](./pics/transformation_matrix_T4_6.PNG)
 ### Transformation matrix frame 0 to 2
 
-![](transformation_matrix_T0_EE.PNG)
+![](./pics/transformation_matrix_T0_EE.PNG)
 
 ### Inverse Kinematics
-The approach used for finding the joing angles of the robotic arm as a function of the end effector postion consisted of breaking the robot into two seperate parts.  The wrist center comprised of 3 revolute joints and the first 3 joints of the robot leading up to the wrist center.  Although numerical methods exist to compute all 6 joint angles it can be difficult to arrive at the correct set of solutions.  There will be multiple answers for each joint angle but the joints themselves impose their own constraints depending on the joint type ie. (does the joint move in that direction or past a certain degree limit).  Because of these limitations and ease of calculation an analytical or cloed form solution was used.  Mapping the geometry of the first 3 joints or up to the wrist center one can find the joint angles with simple geometry once the first three joint angles have been found some matrix multiplication will yield the last 3 joint angles.
+The approach used for finding the joing angles of the robotic arm as a function of the end effector postion consisted of breaking the robot into two seperate parts.  The wrist center comprised of 3 revolute joints and the first 3 joints of the robot leading up to the wrist center.  Although numerical methods exist to compute all 6 joint angles it can be difficult to arrive at the correct set of solutions without an accurate guess.  Computational time wwould be a consideration as well. There will be multiple answers for each joint angle but the joints themselves impose their own constraints depending on the joint type ie. (does the joint move in that direction or past a certain degree limit).  Because of these limitations and ease of calculation an analytical or cloed form solution was used.  Mapping the geometry of the first 3 joints or up to the wrist center one can find the joint angles with simple geometry.  Once the first three joint angles have been found, matrix multiplication will yield the last 3 joint angles.  This equation is shown below that the transpose of the rotation matrix from 0 to 3 muliplied with the Rotatio matrix from 0 to 6 will yield the last 3 joint angles.  
 
 Finding the exaxt postion of the wrtist center required additional rotations to the transformation matrices derrived from the DH parameter table.  This was due to an offset between the gripper frame and frame 6.  An additional roation of 180 degrees around the z axis and -90 degree rotation about the y axis aligned these two frames.  
 
 ### Frame 0 to 3 inverse kinematic diagram
 
-![](0_3_inv_kin_diagram.PNG)
+![](./pics/0_3_inv_kin_diagram.PNG)
 
 
 ### Inverse kinematic frame 3 to EE
 
-![](inv_kin_eq.PNG)
+![](./pics/inv_kin_eq.PNG)
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
 And here's where you can draw out and show your math for the derivation of your theta angles. 
 
-![alt text][image2]
+![alt text][./pics/image2]
 
 ### Project Implementation
 
@@ -92,6 +92,6 @@ Here I'll talk about the code, what techniques I used, what worked and why, wher
 
 
 And just for fun, another example image:
-![alt text][image3]
+![alt text][./pics/image3]
 
 
