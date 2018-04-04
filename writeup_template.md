@@ -77,21 +77,12 @@ Finding the exaxt postion of the wrtist center required additional rotations to 
 
 ![](./pics/inv_kin_eq.PNG)
 
-#### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
-
-And here's where you can draw out and show your math for the derivation of your theta angles. 
-
-![alt text][./pics/image2]
 
 ### Project Implementation
-
-#### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
-
-
-Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.  
+using the safe_spanwer script the gazebo, ros master, Rviz environments are brought up.  I had to leave the computer completely alone when allowing gazebo to start up.  It seemed like each time I tried to operate while gazebo was starting up it would crash and the process had to be completed again.  After these environemtn were started the IK_servery scripts was run.  this scripts purpose was to receive the individual end effector postions from Moveit motion planning and calculate the joint angles need to place the end effector in the correct position.  Initially the two program worked well together with the pick and place operation completed successfully, but the path that moveit would plan would sometime deviate wildly from what the shortest path actually was.  I searched and found within the moveit::planning interface class there was an option to set the number of 
 
 
-And just for fun, another example image:
-![alt text][./pics/image3]
+
+
 
 
