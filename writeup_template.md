@@ -79,9 +79,16 @@ Finding the exaxt postion of the wrtist center required additional rotations to 
 
 
 ### Project Implementation
-using the safe_spanwer script the gazebo, ros master, Rviz environments are brought up.  I had to leave the computer completely alone when allowing gazebo to start up.  It seemed like each time I tried to operate while gazebo was starting up it would crash and the process had to be completed again.  After these environemtn were started the IK_servery scripts was run.  this scripts purpose was to receive the individual end effector postions from Moveit motion planning and calculate the joint angles need to place the end effector in the correct position.  Initially the two program worked well together with the pick and place operation completed successfully, but the path that moveit would plan would sometime deviate wildly from what the shortest path actually was.  I searched and found within the moveit::planning interface class there was an option to set the number of 
+using the safe_spanwer script the gazebo, ros master, Rviz environments are brought up.  I had to leave the computer completely alone when allowing gazebo to start up.  It seemed like each time I tried to operate while gazebo was starting up it would crash and the process had to be completed again.  After these environemtn were started the IK_servery scripts was run.  this scripts purpose was to receive the individual end effector postions from Moveit motion planning and calculate the joint angles need to place the end effector in the correct position.  Initially the two program worked well together with the pick and place operation completed successfully, but the path that moveit would plan would sometime deviate wildly from what the shortest path actually was.  I searched and found within the moveit::planning interface::MoveGroup class there was an option to set the minimum number of path planning attempts to calculate and find the shortest path.  I set this minimum number to 10 for both the move group and the end effector group.  After adding this piece of code to the trajectory_sampler.cpp file the ROS environment was refreshed using catkin_make to rebuild.  After this moveit did a resonably good job with calculating the minimum distance between the start and end pose.  Running the simulation through 10 cycles of pick an place operations the robot faile dto pick up the cylinder one time.  This was during the period of time where the continue button was pushed and the robot acted without user input.  A sleep period was added to the trajectory_sampler file to prevent the gripper arm from moving before the gripper had to time to fully contract.    
 
+### trajectory_sampler code addition
 
+![](./pics/trajectory_sampler_snip.PNG)
+
+trajectory_sampler_snip.PNG
+### Project Completion
+
+![](./pics/pickandplace_result.PNG)
 
 
 
