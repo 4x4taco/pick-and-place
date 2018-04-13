@@ -60,13 +60,11 @@ The approach used for finding the joint angles of the robotic arm as a function 
 
 Finding the exaxt postion of the wrtist center required additional rotations to the transformation matrices derrived from the DH parameter table.  This was due to an offset between the gripper frame and frame 6.  An additional roation of 180 degrees around the z axis and -90 degree rotation about the y axis aligned these two frames.  
 
-### Frame 0 to 3 inverse kinematic diagram
+### Frame 0 to WC inverse kinematic diagram
 
 ![](./pics/0_3_inv_kin_diagram.PNG)
 
-### Inverse kinematic frame 3 to EE
-
-![](./pics/### Equations
+### Inverse kinematic frame 0 to WC
 
 ![](./pics/inv_kin_diag.PNG)
 
@@ -91,6 +89,6 @@ using the safe_spanwer script the gazebo, ros master, Rviz environments were bro
 ![](./pics/pickandplace_result.PNG)
 
 ### Conclusion
-overall I found this project very interesting and useful information.  I found the most difficult information to process was the DH parameter configuration, especially the combination of the frames at the wrist center.  Watching tutorials on Youtube a different DH instruction set was used but I understand that combining the frames at the wrist center actually simplifies the transforms between the frames.  Going forward I would like to spend more time trying to understand ROS industrial software for path planning.  the IK_server script worked okay but in a tight spot or manufacturing environment the user would want the paths to be as optimized as possible.  This would decrease excessive wear on robot components and decrease the time it takes to perform a pick and place operation.
+Overall I found this project very interesting and useful information.  I found the most difficult information to process was the DH parameter configuration, especially the combination of the frames at the wrist center.  Watching tutorials on Youtube a different DH instruction set was used but I understand that combining the frames at the wrist center actually simplifies the transforms between the frames.  Going forward I would like to spend more time trying to understand ROS industrial software for path planning.  the IK_server script worked okay but in a tight spot or manufacturing environment the user would want the paths to be as optimized as possible.  This would decrease excessive wear on robot components and decrease the time it takes to perform a pick and place operation.
 
 
