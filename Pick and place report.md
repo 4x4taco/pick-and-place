@@ -64,10 +64,19 @@ Finding the exaxt postion of the wrtist center required additional rotations to 
 
 ![](./pics/0_3_inv_kin_diagram.PNG)
 
+### Inverse kinematic frame 3 to EE
+
+![](./pics/### Equations
+
+![](./pics/inv_kin_diag.PNG)
+
+
 
 ### Inverse kinematic frame 3 to EE
 
 ![](./pics/inv_kin_eq.PNG)
+
+
 
 
 ### Project Implementation
